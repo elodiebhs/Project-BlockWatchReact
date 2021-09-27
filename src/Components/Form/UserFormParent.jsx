@@ -34,8 +34,8 @@ export default class UserFormParent extends Component {
 
   render() {
     const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio } = this.state;
-    const values = { firstName, lastName, email, occupation, city, bio };
+    const { firstName, lastName, address, city, incident } = this.state;
+    const values = { firstName, lastName, address, city, incident };
 
     switch (step) {
       case 1:
