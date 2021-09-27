@@ -16,10 +16,6 @@ code {
     monospace;
 }
 
-.MuiDialog-paper {
-  padding: 15px;
-}
-
 button.MuiButton-containedSecondary {
   margin-bottom: 10px;
 }

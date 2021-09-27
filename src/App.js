@@ -5,9 +5,15 @@ import UserFormParent from "./Components/Form/UserFormParent"
 function App() {
   return (
     <div className="App">
-     <Header/>
-     <Table/>
-     <UserFormParent/>
+      <Header />
+
+      <div>
+        <UserFormParent />
+      </div>
+      <div>
+        <Table />
+      </div>
+
     </div>
   );
 }
