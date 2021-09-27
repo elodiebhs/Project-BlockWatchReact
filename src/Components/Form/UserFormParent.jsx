@@ -4,7 +4,7 @@ export default class UserFormParent extends Component {
   render() {
     return (
       <div>
-        
+        Hello
       </div>
     )
   }
