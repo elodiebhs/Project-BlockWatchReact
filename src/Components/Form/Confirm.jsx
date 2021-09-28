@@ -18,7 +18,7 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, address, city, incident }
+      values: { firstName, lastName, address, incident }
     } = this.props;
     return (
       <Box
@@ -35,9 +35,6 @@ export class Confirm extends Component {
           </ListItem>
           <ListItem>
             <ListItemText primary="Address" secondary={address} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary="City" secondary={city} />
           </ListItem>
           <ListItem>
             <ListItemText primary="Incident" secondary={incident} />

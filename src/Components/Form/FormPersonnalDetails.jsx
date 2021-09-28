@@ -33,14 +33,7 @@ export class FormPersonnalDetails extends Component {
           fullWidth
         />
         <br />
-        <TextField
-          placeholder="Enter Your City"
-          label="City"
-          onChange={handleChange('city')}
-          defaultValue={values.city}
-          margin="normal"
-          fullWidth
-        />
+        
         <br />
         <TextField
           placeholder="Enter Details of the event"
