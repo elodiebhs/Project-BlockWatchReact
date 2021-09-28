@@ -7,28 +7,33 @@ const Table2 = () => {
   //set state using useState Hook with data from mock data
   const [contacts, setContacts] = useState(data)
 
-    return (
-      <div className="table-container">
-        <table>
-          {/* column */}
+  return (
+    <div className="table-container">
+      <table>
+        {/* column */}
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Incident</th>
+        </tr>
+        {/* rows */}
+        <tbody>
+          {contacts.map((contact) => (
             <tr>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Incident</th>
+              <td>{contact.FirstName}</td>
+              <td>{contact.LastName}</td>
+              <td>{contact.Address}</td>
+              <td>{contact.Incident}</td>
             </tr>
-          {/* rows */}
-          <tbody>
-            <tr>
-              <td>Elodie</td>
-              <td>160chemin</td>
-              <td>xxxxx</td>
-            </tr>
-          </tbody>
+          ))}
 
-        </table>
+        </tbody>
 
-      </div>
-    )
+      </table>
+
+    </div>
+  )
 }
 
 export default Table2
