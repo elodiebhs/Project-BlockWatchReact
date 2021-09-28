@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import '../Components/Table2.css'
+import data from "../mock-data.json"
 
 const Table2 = () => {
 
+  //set state using useState Hook with data from mock data
+  const [contacts, setContacts] = useState(data)
 
     return (
       <div className="table-container">
@@ -10,15 +13,13 @@ const Table2 = () => {
           {/* column */}
             <tr>
               <th>Name</th>
-              <th>LastName</th>
-              <th>Adress</th>
+              <th>Address</th>
               <th>Incident</th>
             </tr>
           {/* rows */}
           <tbody>
             <tr>
               <td>Elodie</td>
-              <td>Bouthors</td>
               <td>160chemin</td>
               <td>xxxxx</td>
             </tr>
