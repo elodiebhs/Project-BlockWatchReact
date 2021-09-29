@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "FirstName": "Jenny Chan",
-    "LastName":"Chan",
-    "Address": "3 waterfoot road",
-    "Incident": "333-962-7516"
+    "firstName": "Jenny Chan",
+    "lastName":"Chan",
+    "address": "3 waterfoot road",
+    "incident": "333-962-7516"
     
   },
   {
     "id": 2,
-    "FirstName": "Jessica warren",
-    "LastName":"warren",
-    "Address": "4 tall town",
-    "Incident": "011-211-7516"
+    "firstName": "Jessica warren",
+    "fastName":"warren",
+    "address": "4 tall town",
+    "incident": "011-211-7516"
     
   },
   {
     "id": 3,
-    "FirstName": "Tony Frank",
-    "LastName":"Frank",
-    "Address": "11 lesly road",
-    "Incident": "788-962-7516"
+    "firstName": "Tony Frank",
+    "lastName":"Frank",
+    "address": "11 lesly road",
+    "incident": "788-962-7516"
  
   },
   {
     "id": 4,
-    "FirstName": "Jeremy Clark",
-    "LastName":"Clark",
-    "Address": "333 miltown manor",
-    "Incident": "011-962-111"
+    "firstName": "Jeremy Clark",
+    "lastName":"Clark",
+    "address": "333 miltown manor",
+    "incident": "011-962-111"
    
   },
   {
     "id": 5,
-    "FirstName": "Raymond Edwards",
-    "LastName":"Edwards",
-    "Address": "99 blue acres",
-    "Incident": "3231-962-7516"
+    "firstName": "Raymond Edwards",
+    "lastName":"Edwards",
+    "address": "99 blue acres",
+    "incident": "3231-962-7516"
     
   }
 ]
