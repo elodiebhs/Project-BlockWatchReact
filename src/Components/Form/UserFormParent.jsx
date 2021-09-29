@@ -9,10 +9,8 @@ export default class UserFormParent extends Component {
     step: 1,
     firstName: '',
     lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: ''
+    address: '',
+    incident: ''
   };
 
   // go back to previous step
