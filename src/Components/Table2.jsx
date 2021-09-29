@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react'
 import '../Components/Table2.css'
 import data from "../mock-data.json"
+import { nanoid } from 'nanoid';
 import Form from '../Components/Form'
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
@@ -40,6 +41,23 @@ const Table2 = () => {
     setAddFormData(newFormData);
   };
 
+  const handleAddFormSubmit = (event) => {
+    event.preventDefault();
+
+    const newContact = {
+      firstName: addFormData.firstName,
+      lastName: addFormData.lastName,
+      address: addFormData.address,
+      incident: addFormData.incident,
+
+    }
+
+    //create a new contact array to avoid mutating th state
+    //copy current contact and add new contact object we created
+    const newContacts = [...contacts, newContact];
+    setContacts(newContacts)
+  }
+
 
 
 
@@ -48,8 +66,7 @@ const Table2 = () => {
     <>
       <div className='form-container'> </div>
 
-
-      <form>
+      <form onSubmit={handleAddFormSubmit}>
         <input
           type="text"
           name="firstName"
@@ -81,6 +98,8 @@ const Table2 = () => {
           placeholder="Enter details on the incident"
           onChange={handleAddFormChange}
         />
+
+        <button>Add</button>
       </form>
 
       {/* <Box
