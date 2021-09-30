@@ -9,14 +9,18 @@ import Form from './Components/Form'
 function App() {
   return (
     <div className="app-container">
-       <Header />
-       
-        <Table/>
+      <Header />
 
-        <Table2/>
-      
+      <UserFormParent />
 
-    </div> 
+      {/* <Form /> */}
+
+      <Table />
+
+      <Table2 />
+
+
+    </div>
   );
 }
 
