@@ -56,7 +56,7 @@ function App() {
 
       <Table userDetails={userDetails} />
 
-      <Table2 />
+      {/* <Table2 /> */}
 
 
     </div>

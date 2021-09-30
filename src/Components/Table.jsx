@@ -7,13 +7,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Confirm from './Form/Confirm';
+import TableHead from '@mui/material/TableHead';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'lastname', label: 'lastName', minWidth: 170 },
-  { id: 'address', label: 'address', minWidth: 170 },
-  { id: 'date', label: 'date', minWidth: 170 },
-  { id: 'incident', label: 'incident', minWidth: 170 },
+  { id: 'lastname', label: 'Last Name', minWidth: 170 },
+  { id: 'address', label: 'Address', minWidth: 170 },
+  { id: 'date', label: 'Date', minWidth: 170 },
+  { id: 'incident', label: 'Incident', minWidth: 170 },
   
 ];
 
@@ -74,9 +75,22 @@ export default function ColumnGroupingTable(props) {
   };
 
   return (
-    <Paper sx={{ width: '100%' }}>
+    <Paper sx={{ width: '90%',  overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
+        <TableHead>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
           <TableBody>
             {data
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
