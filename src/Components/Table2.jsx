@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react'
 import '../Components/Table2.css';
-import data from "../mock-data.json";
+import data from "../mock-data";
 import { nanoid } from 'nanoid';
 import Form from '../Components/Form'
 import Box from '@mui/material/Box';
@@ -17,6 +17,7 @@ const Table2 = () => {
 
   //set state using useState Hook with data from mock data
   const [contacts, setContacts] = useState(data)
+
 
   //store data in an object
   const [addFormData, setAddFormData] = useState({
@@ -62,6 +63,7 @@ const Table2 = () => {
 
 
   return (
+    <>
     <div className="table-container">
       <table>
         {/* column */}
@@ -124,7 +126,8 @@ const Table2 = () => {
       </form>
     </div>
 
-    /* <Box
+
+     {/* <Box
       component="form"
       sx={{
         '& > :not(style)': { m: 1 },
@@ -137,8 +140,9 @@ const Table2 = () => {
         <InputLabel htmlFor="component-outlined">Name</InputLabel>
         <OutlinedInput
           id="component-outlined"
-          value={name}
-          onChange={handleChangeName}
+          name="firstName"
+          value={firstName}
+          onChange={handleAddFormChange}
           label="Name"
         />
       </FormControl>
@@ -148,7 +152,8 @@ const Table2 = () => {
         <OutlinedInput
           id="component-outlined"
           value={lastName}
-          onChange={handleChangeLastName}
+          name="lastName"
+          onChange={handleAddFormChange}
           label="LastName"
         />
       </FormControl>
@@ -158,7 +163,8 @@ const Table2 = () => {
         <Input
           id="component-simple"
           value={address}
-          onChange={handleChangeAddress}
+          name="address"
+          onChange={handleAddFormChange}
           label="address" />
       </FormControl>
 
@@ -170,17 +176,18 @@ const Table2 = () => {
         multiline
         maxRows={4}
         value={incident}
-        onChange={handleChangeIncident}
+        name="incident"
+        onChange={handleAddFormChange}
         variant="filled"
       />
 
-      <Button variant="contained" color="success">
+      <Button variant="contained" color="success" onSubmit={handleAddFormSubmit}>
         Submit
       </Button>
 
 
-    </Box> */
-
+    </Box>  */}
+    </>
   )
 }
 
