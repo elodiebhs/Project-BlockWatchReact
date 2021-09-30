@@ -11,6 +11,8 @@ function App() {
     <div className="app-container">
        <Header />
        
+        <Table/>
+
         <Table2/>
       
 
