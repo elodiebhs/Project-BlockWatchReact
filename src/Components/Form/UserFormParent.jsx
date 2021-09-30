@@ -4,6 +4,7 @@ import FormPersonnalDetails from './FormPersonnalDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 
+// in class component, props is an implicit property
 export default class UserFormParent extends Component {
   state = {
     step: 1,
@@ -23,6 +24,11 @@ export default class UserFormParent extends Component {
   nextStep = () => {
     const { step } = this.state;
     this.setState({ step: step + 1 });
+  }
+
+  confirmed = (data) => {
+    this.props.submittedData(data);
+    this.nextStep();
   }
 
   // handle field change
@@ -56,9 +62,10 @@ export default class UserFormParent extends Component {
       case 3:
         return (
           <Confirm
-            nextStep={this.nextStep}
+          confirmed={this.confirmed}
             prevStep={this.prevStep}
             values={values}
+            data={"somedata"}
           />
         );
       case 4:

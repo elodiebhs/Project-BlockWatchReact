@@ -27,8 +27,8 @@ export class FormPersonnalDetails extends Component {
         <TextField
           placeholder="Enter Your Address"
           label="Address"
-          onChange={handleChange('Address')}
-          defaultValue={values.Address}
+          onChange={handleChange('address')}
+          defaultValue={values.address}
           margin="normal"
           fullWidth
         />

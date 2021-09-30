@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import Confirm from './Form/Confirm';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
@@ -37,13 +38,35 @@ const rows = [
   
 ];
 
-export default function ColumnGroupingTable() {
+// props has to be declared explicitly in fuctional componenet
+export default function ColumnGroupingTable(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [data, setData] = React.useState(rows);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
+
+//  console.log("props update", props);
+
+
+  // like class consrtuctor  beacuse of empty array
+  React.useEffect(() => {
+    console.log("child table ue");
+    console.log(props.userDetails);
+    if(props.userDetails.firstName){
+      const {
+        firstName, lastName, address, incident
+      } = props.userDetails;
+      console.log(firstName,lastName);
+  
+      const newRowItem = createData(firstName, lastName, address,new Date().toLocaleString(), incident)
+      setData([...data,newRowItem])
+  
+    }
+  }, [props.userDetails]) // [] is a dependency array, only execute useeffect if any value in dependency array has changed
+
 
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
@@ -55,7 +78,7 @@ export default function ColumnGroupingTable() {
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableBody>
-            {rows
+            {data
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
@@ -79,7 +102,7 @@ export default function ColumnGroupingTable() {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={data.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
