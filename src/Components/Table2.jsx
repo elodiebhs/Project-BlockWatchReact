@@ -29,6 +29,7 @@ const Table2 = () => {
 
 
   const handleAddFormChange = (event) => {
+    //preventDefault event cancelts the event if it is cancelable
     event.preventDefault();
     //get the name attribut of the input the user has changed
     const fieldName = event.target.getAttribute('name');
